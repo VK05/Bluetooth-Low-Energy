@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.sowmy.bleread">
+    <uses-feature android:name="android.hardware.bluetooth_le" android:required="true"/>
+
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+
+    <application android:label="IPVS Weather App"
+        android:icon="@mipmap/ic_launcher"
+        android:theme="@android:style/Theme.Holo.Light">
+        <activity android:name="com.example.sowmy.bleread.MainActivity"
+            android:label="IPVS Weather App">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+
+            </intent-filter>
+        </activity>
+        <activity android:name="com.example.sowmy.bleread.DeviceScanActivity"
+            android:label="IPVS Weather App">
+            <intent-filter>
+                <action android:name="com.example.sowmy.bleread.DeviceScanActivity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+
+            </intent-filter>
+        </activity>
+        <activity android:name="com.example.sowmy.bleread.DeviceControlActivity"/>
+        <service android:name="com.example.sowmy.bleread.BluetoothLeService" android:enabled="true"/>
+    </application>
+
+</manifest>
